@@ -10,9 +10,12 @@ exec_composer() {
   local workdir=$1
   shift 1
 
+#  COMPOSER_HOME="${workdir}/.composer" \
+#    php "${workdir}/composer.phar" $@ \
+#      -d "${workdir}" --quiet --no-interaction
   COMPOSER_HOME="${workdir}/.composer" \
     php "${workdir}/composer.phar" $@ \
-      -d "${workdir}" --quiet --no-interaction
+      -d "${workdir}" --no-interaction
 }
 
 # Install and initialize Composer in the given directory
