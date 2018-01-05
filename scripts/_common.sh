@@ -31,6 +31,7 @@ init_composer() {
 
   # Force the dependance to php 5.6
   exec_composer "$destdir" config -g platform.php 5.6
+  exec_composer "$destdir" update
   # update dependencies to create composer.lock
   exec_composer "$destdir" install --no-dev \
     || ynh_die "Unable to update PhpMyAdmin core dependencies"
